@@ -34,5 +34,5 @@ Each microservice maintains its own schema to ensure data isolation and loose co
 ---
 
 ### 📄 Architecture Diagram (PDF)
-
-[📂 View Architecture PDF](./Docs/Project architecture.pdf)
+[📂 View Architecture PDF](/Docs/pa.png)
+[📂 Download Architecture PDF](/Docs/Project architecture.pdf)
