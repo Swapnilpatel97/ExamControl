@@ -13,6 +13,7 @@ import com.microservices.commonstudent.models.entity.Student;
 import com.microservices.users.clients.CourseFeignClient;
 import com.microservices.users.models.repository.StudentRepository;
 
+
 @Service
 public class StudentServiceImpl extends CommonServiceImpl<Student, StudentRepository> implements StudentService {
 

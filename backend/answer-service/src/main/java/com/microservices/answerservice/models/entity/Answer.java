@@ -1,7 +1,7 @@
 package com.microservices.answerservice.models.entity;
 
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 

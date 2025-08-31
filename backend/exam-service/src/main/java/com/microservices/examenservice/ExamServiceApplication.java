@@ -3,11 +3,11 @@ package com.microservices.examenservice;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@EnableEurekaClient
+
+@EnableFeignClients
 @SpringBootApplication
-
 @EntityScan({"com.microservices.commonexam.models.entity", "com.microservices.examenservice.models.entity"})
 public class ExamServiceApplication {
 

@@ -1,30 +1,34 @@
-
 server:
   port: 8090
+
 spring:
   application:
-    name: zuul-service
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/api/students/**
+        - id: course-service
+          uri: lb://COURSE-SERVICE
+          predicates:
+            - Path=/api/courses/**
+        - id: exam-service
+          uri: lb://EXAM-SERVICE
+          predicates:
+            - Path=/api/exams/**
+        - id: answer-service
+          uri: lb://ANSWER-SERVICE
+          predicates:
+            - Path=/api/answers/**
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
-
-zuul:
-  routes:
-    user-service:
-      path: /api/students/**
-      url: http://localhost:8080/students/
-      serviceId: user-service
-    course-service:
-      path: /api/courses/**
-      url: http://localhost:8081/courses/
-      serviceId: course-service
-    exam-service:
-      path: /api/exams/**
-      url: http://localhost:8082/exams/
-      serviceId: exam-service
-    answer-service:
-      path: /api/answers/**
-      url: http://localhost:8083/answers/
-      serviceId: answer-service
+      defaultZone: http://localhost:8761/eureka
